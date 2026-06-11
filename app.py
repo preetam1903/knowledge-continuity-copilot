@@ -10,21 +10,30 @@ st.set_page_config(
 
 st.title("🧠 Knowledge Continuity Copilot")
 
-uploaded_file = st.file_uploader(
-    "Upload Document",
-    type=["txt","docx"]
+tab1, tab2 = st.tabs(
+    [
+        "Knowledge Extraction",
+        "Ask Rajesh"
+    ]
 )
 
-if uploaded_file:
+with tab1:
 
-    document_text = read_document(
-        uploaded_file
+    uploaded_file = st.file_uploader(
+        "Upload Document",
+        type=["txt","docx"]
     )
 
-    if st.button("Extract Knowledge"):
+    if uploaded_file:
 
-        result = extract_knowledge(
-            document_text
-        )
+        document_text = read_document(uploaded_file)
 
-        st.json(result)
+        if st.button("Extract Knowledge"):
+
+            result = extract_knowledge(document_text)
+
+            st.json(result)
+
+with tab2:
+
+    st.write("Coming Soon")
