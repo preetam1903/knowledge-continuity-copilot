@@ -75,28 +75,32 @@ with tab1:
             # Summary Metrics
 
             
-            insights = 0
+            assets = 0
+            failure_modes = 0
+            expert_insights = 0
             root_causes = 0
 
             for item in repository:
 
                 k = item["knowledge"]
 
-                systems += len(
-                    k.get("systems", [])
+                if k.get("asset"):
+                    assets += 1
+
+                failure_modes += len(
+                    k.get("failure_modes", [])
                 )
 
-                rules += len(
-                    k.get("business_rules", [])
-                )
-
-                insights += len(
+                expert_insights += len(
                     k.get("expert_insights", [])
                 )
 
                 root_causes += len(
                     k.get("root_causes", [])
                 )
+
+
+            
 
             col1, col2, col3, col4 = st.columns(4)
 
