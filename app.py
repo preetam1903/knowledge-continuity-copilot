@@ -1,22 +1,8 @@
 import streamlit as st
-import json
+
+
+
 from ask_rajesh import ask_rajesh
-import json
-
-try:
-
-    with open(
-        "knowledge_repository.json",
-        "r",
-        encoding="utf-8"
-    ) as f:
-
-        repository = json.load(f)
-
-except Exception:
-
-    repository = []
-
 from document_reader import read_document
 from knowledge_agent import extract_knowledge
 
@@ -49,6 +35,8 @@ with tab1:
 
             result = extract_knowledge(document_text)
 
+            st.session_state["knowledge"] = result
+
             st.json(result)
 
 with tab2:
@@ -61,17 +49,17 @@ with tab2:
 
     if st.button("Get Expert Advice"):
 
-        if not repository:
+        if "knowledge" not in st.session_state:
 
             st.error(
-                "knowledge_repository.json not found"
+                "Please extract knowledge first in Tab 1"
             )
 
         else:
 
             answer = ask_rajesh(
                 question,
-                repository
+                st.session_state["knowledge"]
             )
 
             st.write(answer)
