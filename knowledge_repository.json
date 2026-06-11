@@ -1,0 +1,74 @@
+[
+    {
+        "source_file": "01_KT_Rajesh_MES_Integration.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Knowledge Transfer\",\n  \"summary\": \"This document provides insights into the integration of MES with SAP, including common issues and important tables.\",\n  \"systems\": [\n    \"SAP ECC\",\n    \"MES\",\n    \"PI Interface\"\n  ],\n  \"tables\": [\n    \"MES_PRODUCTION\",\n    \"MES_QUEUE_STATUS\",\n    \"SAP_CONFIRMATION\"\n  ],\n  \"business_rules\": [\n    \"Trial coils are excluded from SAP confirmations.\"\n  ],\n  \"issues\": [\n    \"Production mismatch\",\n    \"Queue delays\",\n    \"Missing confirmations\"\n  ],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "11_Project_History.docx",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [\n    \"MES\",\n    \"SAP\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "14_Screen_Recording_Transcript.txt",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [\n    \"SAP\",\n    \"PI Queue Monitor\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [\n    \"Queue backlog detected\"\n  ],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [\n    \"Check production confirmation\",\n    \"Compare MES records\",\n    \"Restart queue\"\n  ],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "04_Business_Rules.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Business Rules\",\n  \"summary\": \"\",\n  \"systems\": [],\n  \"tables\": [],\n  \"business_rules\": [\n    \"BR-001 Yield = Good Production / Charged Material\",\n    \"BR-002 Trial coils excluded\",\n    \"BR-003 Queue delay > 30 mins invalidates reporting\",\n    \"BR-004 Production updated every 15 mins\"\n  ],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "10_Lessons_Learned.docx",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [\n    \"Never compare SAP and MES production during queue backlog.\",\n    \"Always verify queue status first.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "05_Data_Dictionary.docx",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [\n    \"MES_PRODUCTION\",\n    \"MES_QUEUE_STATUS\",\n    \"SAP_CONFIRMATION\"\n  ],\n  \"tables\": [\n    \"MES_PRODUCTION\",\n    \"MES_QUEUE_STATUS\",\n    \"SAP_CONFIRMATION\"\n  ],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "20_Knowledge_Transfer_Plan.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Knowledge Transfer Plan\",\n  \"summary\": \"Capture critical system and data knowledge before retirement.\",\n  \"systems\": [],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "07_RCA_Production_Mismatch.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Production Mismatch RCA\",\n  \"summary\": \"Mismatch in production data between SAP and MES systems.\",\n  \"systems\": [\n    \"SAP\",\n    \"MES\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [\n    \"Production data mismatch\"\n  ],\n  \"root_causes\": [\n    \"PI queue blocked for 42 minutes.\"\n  ],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [\n    \"Always check the queue status when there is a production mismatch.\",\n    \"In my experience, queue blockages often lead to data discrepancies.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": [\n    \"Queue monitoring alert implemented.\"\n  ]\n}"
+    },
+    {
+        "source_file": "06_System_Interfaces.docx",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [\n    \"SAP ECC\",\n    \"PI Interface\",\n    \"MES\",\n    \"Data Lake\",\n    \"Power BI\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "02_Business_Rules.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Business Rules\",\n  \"summary\": \"Production Reporting Business Rules\",\n  \"systems\": [],\n  \"tables\": [],\n  \"business_rules\": [\n    \"BR-001 Yield = Good Production / Charged Material\",\n    \"BR-002 Trial coils excluded\",\n    \"BR-003 Queue delay > 30 minutes invalidates reporting\",\n    \"BR-004 Production updates every 15 minutes\"\n  ],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "02_KT_SAP_Reporting.docx",
+        "knowledge": "{\n  \"artifact_type\": \"SAP Reporting Knowledge Transfer\",\n  \"summary\": \"Production reports are sourced from SAP confirmation tables.\",\n  \"systems\": [\"SAP\"],\n  \"tables\": [\"confirmation tables\"],\n  \"business_rules\": [],\n  \"issues\": [\"Delayed confirmations\", \"Missing reprocessed records\"],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [\"Always validate queue status before reporting.\"],\n  \"expert_insights\": [\n    \"Always validate queue status before reporting.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "09_RCA_Queue_Backlog.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Queue Backlog RCA\",\n  \"summary\": \"Production reporting delayed due to PI server overload.\",\n  \"systems\": [\"PI server\"],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [\"PI server overload\"],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "03_KT_Dashboard_Knowledge.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Dashboard Knowledge Transfer\",\n  \"summary\": \"Power BI dashboards consume data from Data Lake with a refresh frequency of 30 minutes. There is a known issue where dashboard numbers may not match SAP during queue delays.\",\n  \"systems\": [\n    \"Power BI\",\n    \"Data Lake\",\n    \"SAP\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [\n    \"Dashboard numbers may not match SAP during queue delays.\"\n  ],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [\n    \"Always check for queue delays when comparing dashboard numbers to SAP.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "19_Expert_Profile.docx",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [\n    \"SAP ECC\",\n    \"MES\",\n    \"PI Interface\",\n    \"Power BI\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [\n    \"In my experience, always check the data flow between SAP ECC and MES for discrepancies.\",\n    \"90% of incidents are caused by misconfigured interfaces.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "03_Data_Dictionary.docx",
+        "knowledge": "{\n  \"artifact_type\": \"Data Dictionary\",\n  \"summary\": \"This document contains definitions and descriptions of various tables used in the Manufacturing Execution System (MES).\",\n  \"systems\": [\n    \"MES\",\n    \"SAP\"\n  ],\n  \"tables\": [\n    \"MES_PRODUCTION\",\n    \"MES_QUEUE_STATUS\",\n    \"SAP_CONFIRMATION\"\n  ],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "08_RCA_Missing_Coil.docx",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [\"Message processing failure.\"],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [],\n  \"lessons_learned\": [],\n  \"corrective_actions\": [\"Reprocess interface messages.\"]\n}"
+    },
+    {
+        "source_file": "13_Architecture_Review_Meeting.txt",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [\n    \"MES\",\n    \"SAP\",\n    \"PI\"\n  ],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [],\n  \"expert_insights\": [\n    \"Queue blockage can delay reporting.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    },
+    {
+        "source_file": "12_Rajesh_Interview.txt",
+        "knowledge": "{\n  \"artifact_type\": \"\",\n  \"summary\": \"\",\n  \"systems\": [],\n  \"tables\": [],\n  \"business_rules\": [],\n  \"issues\": [],\n  \"root_causes\": [],\n  \"troubleshooting_steps\": [\"Check queue status.\"],\n  \"expert_insights\": [\n    \"90 percent of production mismatch issues are caused by queue delays.\",\n    \"Always check queue status.\"\n  ],\n  \"lessons_learned\": [],\n  \"corrective_actions\": []\n}"
+    }
+]
