@@ -5,6 +5,7 @@ import streamlit as st
 from ask_rajesh import ask_rajesh
 from document_reader import read_document
 from knowledge_agent import extract_knowledge
+from rag_agent import ask_rag
 
 st.set_page_config(
     page_title="Knowledge Continuity Copilot",
@@ -13,11 +14,12 @@ st.set_page_config(
 
 st.title("🧠 Knowledge Continuity Copilot")
 
-tab1, tab2, tab3 = st.tabs(
+tab1, tab2, tab3, tab4 = st.tabs(
     [
         "Knowledge Repository",
         "Knowledge Dashboard",
-        "Ask Expert"
+        "Ask Expert",
+        "Ask RAG"
     ]
 )
 
@@ -40,6 +42,7 @@ with tab1:
         if st.button("Build Knowledge Repository"):
 
             repository = []
+            raw_documents=[]
 
             with st.spinner(
                 "Extracting knowledge from documents..."
@@ -50,7 +53,9 @@ with tab1:
                     document_text = read_document(
                         uploaded_file
                     )
-
+                    raw_documents.append(
+                        document_text
+                    )
                     knowledge = extract_knowledge(
                         document_text
                     )
@@ -61,6 +66,7 @@ with tab1:
                     })
 
             st.session_state["repository"] = repository
+            st.session_state["raw_documents"] = raw_documents
 
             st.success(
                 f"Repository built from {len(repository)} documents"
@@ -68,8 +74,7 @@ with tab1:
 
             # Summary Metrics
 
-            systems = 0
-            rules = 0
+            
             insights = 0
             root_causes = 0
 
@@ -273,4 +278,31 @@ with tab2:
                 "-",
                 x
             )
+
+with tab4:
+
+    st.header("Ask RAG")
+
+    question = st.text_input(
+        "Ask a question",
+        key="rag_question"
+    )
+
+    if st.button(
+        "Ask RAG"
+    ):
+
+        docs = st.session_state.get(
+            "raw_documents",
+            []
+        )
+
+        answer = ask_rag(
+            question,
+            docs
+        )
+
+        st.write(answer)
+
+
 
