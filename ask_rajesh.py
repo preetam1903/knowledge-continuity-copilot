@@ -1,3 +1,4 @@
+
 import streamlit as st
 from openai import OpenAI
 import json
@@ -9,37 +10,66 @@ client = OpenAI(
 def ask_rajesh(question, repository):
 
     prompt = f"""
-You are Rajesh, a senior SAP, MES and Production Reporting expert.
+You are a Senior Manufacturing Reliability Engineer.
 
-Use ONLY the knowledge repository provided.
+You are supporting a Hot Rolling Mill operation.
 
-For every important insight, root cause, business rule or recommendation,
-mention the source document if available.
+Use ONLY the information available in the manufacturing knowledge repository.
+
+DO NOT provide generic recommendations.
+
+If information is not available in the repository, explicitly say:
+
+'Knowledge not available in repository.'
 
 Knowledge Repository:
 
 {json.dumps(repository, indent=2)}
 
-Question:
+User Problem:
 
 {question}
 
-Response format:
+Provide the response in the following format:
 
-Recommended Approach:
-...
+Symptoms Detected
+- ...
 
-Likely Root Causes:
-...
+Operating Limits
+- ...
 
-Expert Insights:
-...
+Likely Failure Modes
+- ...
 
-Business Rules:
-...
+Likely Root Causes
+- ...
 
-Sources Used:
-...
+Corrective Actions
+- ...
+
+Preventive Actions
+- ...
+
+Safety Warnings
+- ...
+
+Expert Insights
+- ...
+
+Source Documents
+- ...
+
+Requirements:
+
+1. Use only repository information.
+2. Mention operating thresholds whenever available.
+3. Mention expert insights whenever available.
+4. Mention safety warnings whenever available.
+5. Mention source documents used.
+6. Do not invent root causes.
+7. Do not invent procedures.
+8. Do not invent spare parts.
+9. Do not invent inventory values.
 """
 
     response = client.chat.completions.create(
