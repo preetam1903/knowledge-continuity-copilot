@@ -13,10 +13,11 @@ st.set_page_config(
 
 st.title("🧠 Knowledge Continuity Copilot")
 
-tab1, tab2 = st.tabs(
+tab1, tab2, tab3 = st.tabs(
     [
-        "Knowledge Extraction",
-        "Ask Rajesh"
+        "Knowledge Repository",
+        "Knowledge Dashboard",
+        "Ask Expert"
     ]
 )
 
@@ -153,3 +154,123 @@ with tab2:
             )
 
             st.write(answer)
+
+
+with tab3:
+
+    st.header("Knowledge Dashboard")
+
+    if "repository" not in st.session_state:
+
+        st.warning(
+            "Build repository first"
+        )
+
+    else:
+
+        repository = st.session_state["repository"]
+
+        assets = set()
+        failure_modes = set()
+        root_causes = set()
+        expert_insights = set()
+
+        for item in repository:
+
+            k = item["knowledge"]
+
+            asset = k.get(
+                "asset",
+                ""
+            )
+
+            if asset:
+                assets.add(asset)
+
+            failure_modes.update(
+                k.get(
+                    "failure_modes",
+                    []
+                )
+            )
+
+            root_causes.update(
+                k.get(
+                    "root_causes",
+                    []
+                )
+            )
+
+            expert_insights.update(
+                k.get(
+                    "expert_insights",
+                    []
+                )
+            )
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.metric(
+                "Assets",
+                len(assets)
+            )
+
+        with col2:
+            st.metric(
+                "Failure Modes",
+                len(failure_modes)
+            )
+
+        with col3:
+            st.metric(
+                "Root Causes",
+                len(root_causes)
+            )
+
+        with col4:
+            st.metric(
+                "Expert Insights",
+                len(expert_insights)
+            )
+
+        st.subheader(
+            "Assets"
+        )
+
+        for x in assets:
+            st.write(
+                "-",
+                x
+            )
+
+        st.subheader(
+            "Failure Modes"
+        )
+
+        for x in failure_modes:
+            st.write(
+                "-",
+                x
+            )
+
+        st.subheader(
+            "Root Causes"
+        )
+
+        for x in root_causes:
+            st.write(
+                "-",
+                x
+            )
+
+        st.subheader(
+            "Expert Insights"
+        )
+
+        for x in expert_insights:
+            st.write(
+                "-",
+                x
+            )
+
