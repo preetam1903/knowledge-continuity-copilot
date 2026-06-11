@@ -86,8 +86,9 @@ Document:
 
 def extract_knowledge(document_text):
 
-    prompt = KNOWLEDGE_PROMPT.format(
-        document=document_text
+    prompt = KNOWLEDGE_PROMPT.replace(
+        "{document}",
+        document_text
     )
 
     response = client.chat.completions.create(
