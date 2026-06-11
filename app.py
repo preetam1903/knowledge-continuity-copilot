@@ -1,4 +1,6 @@
 import streamlit as st
+import json
+from ask_rajesh import ask_rajesh
 
 from document_reader import read_document
 from knowledge_agent import extract_knowledge
@@ -36,4 +38,24 @@ with tab1:
 
 with tab2:
 
-    st.write("Coming Soon")
+    question = st.text_area(
+        "Ask Rajesh",
+        height=120
+    )
+
+    if st.button("Get Expert Advice"):
+
+        answer = ask_rajesh(
+            question,
+            repository
+        )
+
+        st.write(answer)
+
+with open(
+    "knowledge_repository.json",
+    "r",
+    encoding="utf-8"
+) as f:
+
+    repository = json.load(f)
