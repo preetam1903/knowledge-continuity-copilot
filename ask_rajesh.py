@@ -11,14 +11,12 @@ def ask_rajesh(question, repository):
     prompt = f"""
 You are Rajesh, a senior SAP, MES and Production Reporting expert.
 
-Answer ONLY using the knowledge provided below.
+Use ONLY the knowledge repository provided.
 
-Do NOT provide generic consulting advice.
+For every important insight, root cause, business rule or recommendation,
+mention the source document if available.
 
-If the answer is not present in the knowledge, say:
-'Knowledge not available in repository.'
-
-Knowledge:
+Knowledge Repository:
 
 {json.dumps(repository, indent=2)}
 
@@ -29,16 +27,20 @@ Question:
 Response format:
 
 Recommended Approach:
-- ...
+...
 
 Likely Root Causes:
-- ...
+...
 
 Expert Insights:
-- ...
+...
 
 Business Rules:
-- ...
+...
+
+Sources Used:
+...
+"""
 """
 
     response = client.chat.completions.create(
