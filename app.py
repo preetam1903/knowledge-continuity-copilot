@@ -112,27 +112,26 @@ with tab1:
 
             with col2:
                 st.metric(
-                    "Systems",
-                    systems
+                    "Assets",
+                    assets
                 )
 
             with col3:
                 st.metric(
-                    "Business Rules",
-                    rules
+                    "Failure Modes",
+                    failure_modes
                 )
 
             with col4:
                 st.metric(
                     "Expert Insights",
-                    insights
+                    expert_insights
                 )
 
             st.metric(
                 "Root Causes",
                 root_causes
             )
-
             st.subheader(
                 "Knowledge Repository"
             )
