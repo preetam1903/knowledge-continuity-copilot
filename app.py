@@ -130,7 +130,7 @@ with tab1:
 
             st.json(repository)
 
-with tab2:
+with tab3:
 
     st.header("Ask Rajesh")
 
@@ -156,7 +156,7 @@ with tab2:
             st.write(answer)
 
 
-with tab3:
+with tab2:
 
     st.header("Knowledge Dashboard")
 
